@@ -25,3 +25,25 @@ class Sub : public Super
       Sub();
       void someOtherMethod();
 }
+
+Observations
+-------------
+OB1:    Code that uses the derived class does not need to know which class in your inheritance chain has defined a method in 
+        order to call it. 
+        Example:
+        --------
+        Sub mySub;
+        mySub.someMethod();         <- someMethod is part of Base class i.e class Super
+        mySub.someOtherMethod();
+     
+OB2:    Inheritance works in only one direction. Base class does not know anything about derived class.
+        Example:
+        --------
+        Super mySuper;
+        mySuper.someOtherMethod();   // Error! Super does not have a someOtherMethod().
+     
+OB3:    Sub class can agument the Super class by adding an additional method or data.
+        Example:
+        --------
+        
+        In above Sub derived class: void someOtherMethod() is new method added to derived class which is not in base class.
