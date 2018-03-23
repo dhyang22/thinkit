@@ -1,0 +1,27 @@
+Extending Classes
+-----------------
+Example:
+--------
+Base or Parent class
+--------------------
+class Super 
+{
+    public:
+      Super(); 
+      void someMethod();
+    protected: 
+      int mProtectedInt;
+    private:
+      int mPrivateInt;
+};
+
+To build a new class called 'Sub' which inherit from 'Super' we use below syntax:
+
+Inherited class
+---------------
+class Sub : public Super
+{
+    public
+      Sub();
+      void someOtherMethod();
+}
