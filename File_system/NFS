@@ -1,0 +1,30 @@
+NFS Filesystem Model
+--------------------
+Filesystem and Filesystem objects
+---------------------------------
+NFS File attribute - fsid: Uniquely identifies file system on the server.
+                     fileid: identifies file or directories within that file system.
+so fsid/fileid pair are unique for each file on a particular server.
+
+Filesystem objects:             NFS calls
+-------------------             ---------  
+Files                     
+Directories                     READDIR, READDIRPLUS to read list of file names from directories.
+Symbolic links
+Special files
+
+Hard link - allows single file to have multiple names
+Soft link - contains a path that references another file or directory.
+
+NFS filehandle - a) it is reference to file or directory that is independent of the file name. All NFS operations use filehandle to identify 
+                 the file or directory to which the operation applies.
+                 b) Filehandle is opeque to the client.
+                 c) Server creates the file handles and only server can interpret the data contained in the file handle.
+                 d) NFS v2 - 32 bytes long and NFSv3 - 64 byte variable length.
+                 
+NFS LOOKUP operation evaluates only one path component at a time, why?
+Reasons:
+a) Pathname syntax - different OS have different syntax.
+b) Client namespace - filesystem mountpointon the client can be detected and crossed.
+c) Caching and latency - Most UNIX clients use a directory name lookup cache ( DNLC ) to cache previous pathname evaluations.
+
