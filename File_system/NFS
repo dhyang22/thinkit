@@ -28,3 +28,7 @@ a) Pathname syntax - different OS have different syntax.
 b) Client namespace - filesystem mountpointon the client can be detected and crossed.
 c) Caching and latency - Most UNIX clients use a directory name lookup cache ( DNLC ) to cache previous pathname evaluations.
 
+Stateless Server
+a) Server Recovery
+b) Idempotent operations
+c) Statelessness and High Availaility
