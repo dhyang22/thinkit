@@ -1,4 +1,4 @@
-Characteristics of Distributed File System
+ Characteristics of Distributed File System
 ------------------------------------------
 1. DFS allows the sharing to users on different machines connected by a communication network.
 2. DFS are implemented using client-server model. ( Server stores the files and Client access it through the network )
@@ -33,7 +33,7 @@ CLIENT can mount the exported file system on to their local directory.
 
 NFS support two types of mount - 
 soft - client gives up after sometime and returns error.
-hard - client keep retrying the request util a reply is received.
+hard - client keep retrying the request util a reply is received. ( default is hard mount )
                       
 NFS components
 --------------
