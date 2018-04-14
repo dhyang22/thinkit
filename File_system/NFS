@@ -35,7 +35,18 @@ NFS support two types of mount -
 soft - client gives up after sometime and returns error.
 hard - client keep retrying the request util a reply is received.
                       
-
+NFS components
+--------------
+1. NFS Protocol.
+2. The Remote Procedure Call ( RPC ) protocol.
+3. The Extended Data Representation ( XDR ) - Represent machine independent representation for data transmission over the network.
+4. NFS Server code.
+5. NFS client code
+6. Mount protocol
+7. Daemon processes used by NFS.    a) on Server - set of 'nfsd' daemons listen for and respond to CLIENT requests.
+                                    b) on Client - set of 'biod' daemns handles asychronous IO for blocks of NFS files.
+                                    c) 'mountd' on server - handles mount requests.
+8. Network Lock Manager ( NLM ) - 'lockd' and Network status Monitor ( NSM ) - 'statd'
 
 NFS Filesystem Model
 --------------------
@@ -55,12 +66,20 @@ Special files
 Hard link - allows single file to have multiple names
 Soft link - contains a path that references another file or directory.
 
-NFS filehandle - a) it is reference to file or directory that is independent of the file name. All NFS operations use filehandle to identify 
-                 the file or directory to which the operation applies.
+NFS filehandle - a) it is the reference to file or directory that is independent of the file name. All NFS operations 
+                    use filehandle to identify the file or directory to which the operation applies.
                  b) Filehandle is opeque to the client.
                  c) Server creates the file handles and only server can interpret the data contained in the file handle.
                  d) NFS v2 - 32 bytes long and NFSv3 - 64 byte variable length.
-                 
+                    Format for 32 byte object : Typically its of below format:
+                    < File system ID,                    inode number,             generation number >
+                      [identifies the local file system][inode number of the file] [                ]
+                      
+                      generation number is required: by server to determine the file handle sent my the client is freed.
+                      Example: Between initial access of the file and when the client makes an IO request on th efile, the server deletes
+                      the file and reuses its inode.
+                      Server increments the generation number of the inode each time the inode is freed.
+                      
 NFS LOOKUP operation evaluates only one path component at a time, why?
 Reasons:
 a) Pathname syntax - different OS have different syntax.
@@ -68,6 +87,17 @@ b) Client namespace - filesystem mountpointon the client can be detected and cro
 c) Caching and latency - Most UNIX clients use a directory name lookup cache ( DNLC ) to cache previous pathname evaluations.
 
 Stateless Server
+----------------
 a) Server Recovery
 b) Idempotent operations
 c) Statelessness and High Availaility
+
+Some of the basic things the server does is:
+--------------------------------------------
+a)  Server extracts the file system ID from file handle and uses it to locate the 'vfs' structure for the file system.
+b)  Server then invokes 'VFS_GET' operation on this file system to translates the file handle and return pointer to vnode
+    of the parent directory.
+c)  Server then invoke the VOP_LOOKUP operation on that vnode, which call corresponding function of the local file system.
+
+
+
