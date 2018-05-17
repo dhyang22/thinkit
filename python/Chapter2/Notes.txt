@@ -36,7 +36,7 @@ Rules to name a Variable
 4. The underscore character can appear in a name. It is often used in names with multiple words, such as my_name or price_of_tea_in_china.
 5. If you give a variable an illegal name, you get a syntax error:
 
-Recap : Please refer below link for more examples.
+RECAP 
 -----
 https://www.learnpython.org/en/Variables_and_Types
 
@@ -78,11 +78,11 @@ Operators are special symbols that represent computations like addition and mult
 /  Division ( Integer Division )
 // 
 ** Exponentiate
+%  Modulo operator
 
 Order of Operations :   PEMDAS  [ Paranthesis, Exponentiation, Multiplication and Division, Addition and Substraction ]
 -------------------
 Note: Multiplication and Division has same precedence and they occur in same expression, they are evaluated from left to right.
-
 
 OPERATIONS ON STRINGS
 ---------------------
@@ -115,4 +115,6 @@ Example2:
 
 We use # for comments.
 
-
+RECAP:
+------
+https://www.learnpython.org/en/Basic_Operators
