@@ -1,0 +1,5 @@
+Excercise   Tell me why its illegal
+---------
+>>> 76trombones = "big parade" SyntaxError: invalid syntax 
+>>> more$ = 1000000 SyntaxError: invalid syntax 
+>>> class = "Computer Science 101" SyntaxError: invalid syntax
