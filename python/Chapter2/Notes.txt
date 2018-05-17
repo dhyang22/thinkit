@@ -1,6 +1,6 @@
 Chapter 2
 ---------
-Values and Types
+VALUES AND TYPES
 ----------------
 Values can be - letters ( individula letters or combination of letters) or numbers ( int, float .. etc )
 
@@ -24,7 +24,7 @@ Strings can be enclosed using sigle quote ( 'hello' ), double quote ("hello") or
 just using values does not make sense, since we can not hardcode the values. Vaulues can change, due to this we need to use 
 variables.
 
-Variable
+VARIABLE
 --------
 Variable is a name that refers to a values.
 
@@ -36,7 +36,11 @@ Rules to name a Variable
 4. The underscore character can appear in a name. It is often used in names with multiple words, such as my_name or price_of_tea_in_china.
 5. If you give a variable an illegal name, you get a syntax error:
 
-Statements
+Recap : Please refer below link for more examples.
+-----
+https://www.learnpython.org/en/Variables_and_Types
+
+STATEMENTS
 ----------
 A statement is an instruction that the Python interpreter can execute. We have seen two kinds of statements: print and assignment.
 We know python script, it contains sequence of statements so python will interpret and executes.
@@ -52,7 +56,7 @@ print x
 1
 2
 
-Evaluating the Expression
+EVALUATING THE EXPRESSION
 -------------------------
 An expression is a combination of values, variables, and operators. 
 If you type an expression on the command line, the interpreter evaluates it and displays the result:
@@ -63,7 +67,7 @@ Note, a value all by itself is considered an expression, and so is a variable.
 >>> 17
 17
 
-Operators and operands
+OPERATORS AND OPERANDS
 ----------------------
 Operators are special symbols that represent computations like addition and multiplication. The values the operator uses are called operands.
 
@@ -80,7 +84,7 @@ Order of Operations :   PEMDAS  [ Paranthesis, Exponentiation, Multiplication an
 Note: Multiplication and Division has same precedence and they occur in same expression, they are evaluated from left to right.
 
 
-Operations on Strings
+OPERATIONS ON STRINGS
 ---------------------
 Following operations are illegal on strings
 
@@ -111,6 +115,4 @@ Example2:
 
 We use # for comments.
 
-Recap : Please refer below link for more examples.
------
-https://www.learnpython.org/en/Variables_and_Types
+
