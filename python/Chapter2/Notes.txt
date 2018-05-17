@@ -110,3 +110,7 @@ Example2:
 >>> 'FunFunFun'
 
 We use # for comments.
+
+Recap : Please refer below link for more examples.
+-----
+https://www.learnpython.org/en/Variables_and_Types
