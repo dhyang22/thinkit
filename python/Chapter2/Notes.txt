@@ -62,3 +62,51 @@ If you type an expression on the command line, the interpreter evaluates it and 
 Note, a value all by itself is considered an expression, and so is a variable.
 >>> 17
 17
+
+Operators and operands
+----------------------
+Operators are special symbols that represent computations like addition and multiplication. The values the operator uses are called operands.
+
+[ To be updated later ]
+
++  Addition
+*  Multipication
+/  Division ( Integer Division )
+// 
+** Exponentiate
+
+Order of Operations :   PEMDAS  [ Paranthesis, Exponentiation, Multiplication and Division, Addition and Substraction ]
+-------------------
+Note: Multiplication and Division has same precedence and they occur in same expression, they are evaluated from left to right.
+
+
+Operations on Strings
+---------------------
+Following operations are illegal on strings
+
+message-1
+"Hello"/123 
+message*"Hello" 
+"15"+2
+
+For strings, the + operator represents concatenation, which means joining the two operands by linking them end-to-end. 
+
+Example1:
+---------
++ operator
+-----------
+>>> fruit = "banana" 
+>>> bakedGood = " nut bread" 
+>>> print fruit + bakedGood
+
+Output
+>>> banana nut bread
+
+Example2:
+---------
+* operation
+-----------
+>>> "Fun"*3                   // One has to be string and other has to be integer
+>>> 'FunFunFun'
+
+We use # for comments.
